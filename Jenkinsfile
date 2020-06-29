@@ -3,7 +3,7 @@ pipeline {
 	
 	stages {
 			
-		stage('Git Checkout') {
+		stage 'Git Checkout' {
 				gitCheckout(
 				branch: "master",
 				url: "https://github.com/birendersingh03/java_project.git"
