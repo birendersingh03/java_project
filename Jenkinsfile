@@ -29,7 +29,7 @@ pipeline {
 			}
 			steps {
 			
-			    sh 'ls /tmp'
+			    sh 'ls ls /var/lib/jenkins/workspace/java_project*'
 			   sh 'mkdir -p ${WORKSPACE}'
 				sh 'cp -r ${WORKSPACE}/pom.xml /tmp '
 				sh 'ls /tmp'
