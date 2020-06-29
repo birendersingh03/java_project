@@ -29,11 +29,9 @@ pipeline {
 			}
 			steps {
 			
-			    sh 'ls  /var/lib/jenkins/workspace/java_project*'
-			   sh 'mkdir -p ${WORKSPACE}'
-				sh 'cp -r ${WORKSPACE}/pom.xml /tmp '
-				sh 'ls /tmp'
-				sh 'ls ${WORKSPACE}'	
+			 
+			   sh 'mkdir -p java_project/java'
+				'	
 			}
 		}
 	
