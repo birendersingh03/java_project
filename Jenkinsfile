@@ -30,9 +30,7 @@ pipeline {
 			steps {
 			
 			    sh 'mkdir -p /root/dockertest'
-				#sh 'cp -r ${WORKSPACE}/* ${WORKSPACE} '
-				#sh 'cd ${WORKSPACE}/src/main/java'
-				#sh 'mvn clean install'		
+					
 			}
 		}
 	
