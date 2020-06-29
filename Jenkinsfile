@@ -32,7 +32,7 @@ pipeline {
 			 
 			   sh 'mkdir -p java_project/java'
 				sh 'cd java_project/java'
-				sh 'cp -r ${WORKSPACE}/*  java_project/java'
+				sh 'cp -rp ${WORKSPACE}/*  java_project/java'
 				sh 'ls java_project/java'
 				
 					
