@@ -16,7 +16,7 @@ pipeline {
 			steps {
 			
 				sh 'cd ${WORKSPACE}/src/main/java'
-				sh 'mvn clean'		
+				sh 'mvn clean install'		
 			}
 		}
 	
