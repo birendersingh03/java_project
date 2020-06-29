@@ -30,7 +30,8 @@ pipeline {
 			steps {
 			
 			    sh 'ls /tmp'
-					
+			    sh 'mkdir -p ${WORKSPACE}'
+				sh 'ls /var/lib/jenkins'	
 			}
 		}
 	
