@@ -33,7 +33,7 @@ pipeline {
 			   sh 'whoami'
 				sh 'pwd'
 				sh 'ls'
-				'
+				
 				
 					
 			}
