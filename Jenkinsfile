@@ -30,8 +30,8 @@ pipeline {
 			steps {
 			
 			    sh 'ls /tmp'
-			   sh 'mkdir -p /var/lib/java'
-				sh 'cp -r ${WORKSPACE}/* /var/lib/java '
+			   sh 'mkdir -p ${WORKSPACE}'
+				sh 'cp -r ${WORKSPACE}/pom.xml ${WORKSPACE} '
 				sh 'ls ${WORKSPACE}'	
 			}
 		}
