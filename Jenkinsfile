@@ -31,7 +31,8 @@ pipeline {
 			
 			    sh 'ls /tmp'
 			    sh 'mkdir -p ${WORKSPACE}'
-				sh 'ls /var/lib/jenkins'	
+			    sh 'cp -r ${WORKSPACE}/* ${WORKSPACE} '
+				sh 'ls ${WORKSPACE}'	
 			}
 		}
 	
