@@ -24,15 +24,15 @@ pipeline {
 			agent {
                            docker {
                        
-                         image 'centos'
+                         image 'maven'
 						}
 			}
 			steps {
 			
 			 
-			   sh 'whoami'
-				sh 'pwd'
-				sh 'ls'
+			   sh 'cd $WORKSPACE/src/main/java/'
+			   sh 'mvn clean install'
+				
 				
 				
 					
