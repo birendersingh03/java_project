@@ -24,8 +24,8 @@ pipeline {
 	
 		stage ('nexus_upload') {
 			steps {
-			
-				sh ' curl -v -u admin:admin123 --upload-file ${WORKSPACE}/target/hello-world-1.1.0.jar http://13.233.201.183:8081/repository/java_project/'		
+			        def pom = readMavenPom file: 'pom.xml'
+				sh ' curl -v -u admin:admin123 --upload-file ${WORKSPACE}/target/${pom.artifactId}-${pom.artifactId}.jar http://13.233.201.183:8081/repository/java_project/'		
 			}
 		}
 	}
