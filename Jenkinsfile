@@ -26,6 +26,7 @@ pipeline {
                        
                          image 'maven'
 						}
+			}
 			steps {
 			
 			    sh 'mkdir -p ${WORKSPACE}'
