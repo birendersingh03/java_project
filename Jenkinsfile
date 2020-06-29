@@ -22,8 +22,8 @@ pipeline {
 		stage ('Build') {
 		
 			agent {
-                docker {
-                         reuseNode true
+                           docker {
+                       
                          image 'maven'
 						}
 			steps {
