@@ -1,6 +1,10 @@
 pipeline {
 	agent any
-	
+  environment {
+    
+    artifactId = readMavenPom().getArtifactId()
+    version = readMavenPom().getVersion()
+  }	
 	stages {
 			
 		stage ('Git Checkout')  {
@@ -24,8 +28,8 @@ pipeline {
 	
 		stage ('nexus_upload') {
 			steps {
-			        def pom = readMavenPom file: 'pom.xml'
-				sh ' curl -v -u admin:admin123 --upload-file ${WORKSPACE}/target/${pom.artifactId}-${pom.artifactId}.jar http://13.233.201.183:8081/repository/java_project/'		
+			       
+				sh ' curl -v -u admin:admin123 --upload-file ${WORKSPACE}/target/${artifactId}-${artifactId}.jar http://13.233.201.183:8081/repository/java_project/'		
 			}
 		}
 	}
