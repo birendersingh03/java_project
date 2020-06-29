@@ -29,7 +29,7 @@ pipeline {
 			}
 			steps {
 			
-			    sh 'mkdir -p /root/dockertest'
+			    sh 'mkdir -p /dockertest'
 					
 			}
 		}
