@@ -24,7 +24,7 @@ pipeline {
 			agent {
                            docker {
                        
-                         image 'maven'
+                         image 'centos'
 						}
 			}
 			steps {
