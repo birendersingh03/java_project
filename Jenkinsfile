@@ -3,7 +3,7 @@ pipeline {
 	
 	stages {
 			
-		stage 'Git Checkout'  {
+		stage ('Git Checkout')  {
 				steps {
 					git branch: 'master',
 					
@@ -12,7 +12,7 @@ pipeline {
         }
 			}
 			
-		stage 'Build' {
+		stage ('Build') {
 			steps {
 			
 				sh 'cd ${WORKSPACE}/src/main/java'
