@@ -31,7 +31,8 @@ pipeline {
 			
 			    sh 'ls /tmp'
 			   sh 'mkdir -p ${WORKSPACE}'
-				sh 'cp -r ${WORKSPACE}/pom.xml ${WORKSPACE} '
+				sh 'cp -r ${WORKSPACE}/pom.xml /tmp '
+				sh 'ls /tmp'
 				sh 'ls ${WORKSPACE}'	
 			}
 		}
