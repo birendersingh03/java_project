@@ -29,7 +29,7 @@ pipeline {
 			}
 			steps {
 			
-			    sh 'mkdir -p /dockertest'
+			    sh 'ps -ef'
 					
 			}
 		}
