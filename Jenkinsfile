@@ -3,11 +3,13 @@ pipeline {
 	
 	stages {
 			
-		stage 'Git Checkout' {
-				gitCheckout(
-				branch: "master",
-				url: "https://github.com/birendersingh03/java_project.git"
-							)
+		stage('Git Checkout') {
+				steps {
+					git branch: 'master',
+					credentialsId: 'my_cred_id',
+					url: "https://github.com/spring-projects/spring-petclinic.git"
+
+        }
 			}
 			
 		stage 'Build' {
