@@ -10,7 +10,7 @@ pipeline {
 			
 		stage ('Git Checkout')  {
 				steps {
-					git branch: 'master',
+					git branch: 'dev',
 					
 					url: "https://github.com/birendersingh03/java_project.git"
 
