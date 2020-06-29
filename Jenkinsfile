@@ -1,11 +1,13 @@
 pipeline {
-	agent any
+	agent docker
+	
   environment {
     
     artifactId = readMavenPom().getArtifactId()
     version = readMavenPom().getVersion()
     Nexus_Cred = credentials('nexus-cred')
   }	
+  
 	stages {
 			
 		stage ('Git Checkout')  {
@@ -18,8 +20,16 @@ pipeline {
 			}
 			
 		stage ('Build') {
+		
+			agent {
+                docker {
+                         reuseNode true
+                         image 'maven'
+						}
 			steps {
 			
+			    sh 'mkdir -p ${WORKSPACE}'
+				sh 'cp -r ${WORKSPACE}/* ${WORKSPACE} '
 				sh 'cd ${WORKSPACE}/src/main/java'
 				sh 'mvn clean install'		
 			}
@@ -27,11 +37,6 @@ pipeline {
 	
 	
 	
-		stage ('nexus_upload') {
-			steps {
-			       
-				sh ' curl -v -u ${Nexus_Cred_USR}:${Nexus_Cred_PSW} --upload-file ${WORKSPACE}/target/${artifactId}-${version}.jar http://13.233.201.183:8081/repository/java_project/'		
-			}
-		}
+		
 	}
 }
