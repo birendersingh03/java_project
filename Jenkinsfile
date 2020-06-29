@@ -6,7 +6,7 @@ pipeline {
 		stage('Git Checkout') {
 				steps {
 					git branch: 'master',
-					credentialsId: 'my_cred_id',
+					
 					url: "https://github.com/spring-projects/spring-petclinic.git"
 
         }
