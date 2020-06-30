@@ -1,6 +1,6 @@
-pipeline{
+pipeline {
 	agent any
-	environments{
+	environment {
 	
 		Nexus_Cred = credential('nexus-cred')
 		registry = "13.233.201.183:8123"
