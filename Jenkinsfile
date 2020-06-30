@@ -2,7 +2,7 @@ pipeline {
 	agent any
 	
   environment {
-    registry = "http://13.233.201.183:8123"
+    registry = "13.233.201.183:8123"
     artifactId = readMavenPom().getArtifactId()
     version = readMavenPom().getVersion()
     Nexus_Cred = credentials('nexus-cred')
@@ -39,7 +39,7 @@ pipeline {
 		
 		steps{
                script {
-                   def appimage = docker.build registry + "/image" + ":$BUILD_NUMBER"
+                   def appimage = docker.build registry + "/$artifactId-$version" + ":$BUILD_NUMBER"
                    docker.withRegistry( '', Nexus_cred ) {
                        appimage.push()
                        appimage.push('latest')
