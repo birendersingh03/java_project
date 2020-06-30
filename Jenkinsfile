@@ -40,7 +40,7 @@ pipeline {
 		steps{
                script {
                    def appimage = docker.build registry + "/$artifactId-$version" + ":$BUILD_NUMBER"
-                   docker.withRegistry( '', Nexus_cred ) {
+                   docker.withRegistry( '', Nexus_Cred ) {
                        appimage.push()
                        appimage.push('latest')
                    }
