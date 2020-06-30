@@ -1,2 +1,2 @@
 FROM centos
-COPY  target/$artifactId-$version /tmp
+ADD  target/$artifactId-$version /tmp
