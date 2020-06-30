@@ -2,7 +2,7 @@ pipeline {
 	agent any
 	environment {
 	
-		Nexus_Cred = credential('nexus-cred')
+		Nexus_Cred = credentials('nexus-cred')
 		registry = "13.233.201.183:8123"
 		artifactId = readMavenPom().getArtifactId()
 		version = readMavenPom().getVersion()
