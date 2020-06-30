@@ -2,7 +2,7 @@ pipeline {
 	agent any
 	
   environment {
-    
+    registry = "13.233.201.183:8123"
     artifactId = readMavenPom().getArtifactId()
     version = readMavenPom().getVersion()
     Nexus_Cred = credentials('nexus-cred')
@@ -31,16 +31,26 @@ pipeline {
 			
 			 
 			   sh 'cd $WORKSPACE/src/main/java/'
-			   sh 'mvn clean install'
-				
-				
-				
-					
+			   sh 'mvn clean install'									
 			}
+		}
+		
+		stage ('Publish') {
+		
+		steps{
+               script {
+                   def appimage = docker.build registry + ":$BUILD_NUMBER"
+                   docker.withRegistry( '', Nexus_cred ) {
+                       appimage.push()
+                       appimage.push('latest')
+                   }
+               }
+           }
+		
+		
 		}
 	
 	
 	}
 		
 	}
-
