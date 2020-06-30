@@ -2,7 +2,7 @@ pipeline {
 	agent any
 	
   environment {
-    registry = "13.233.201.183:8123"
+    registry = "http://13.233.201.183:8123"
     artifactId = readMavenPom().getArtifactId()
     version = readMavenPom().getVersion()
     Nexus_Cred = credentials('nexus-cred')
