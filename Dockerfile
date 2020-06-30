@@ -1,2 +1,2 @@
 FROM centos
-ADD  target/$artifactId-$version /tmp
+ADD  target/*.jar /tmp
