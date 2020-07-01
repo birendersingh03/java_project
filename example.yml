@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: app
-        image: "13.233.201.183:8123/hello-world-2.1.0"
+        image: "13.233.184.68:8123/hello-world-2.1.0"
         resources:
           requests:
             cpu: 10m
