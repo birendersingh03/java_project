@@ -65,7 +65,7 @@ pipeline {
 		stage ('deploy'){
 		
 			steps {
-				sh 'echo "this is sample deploy step"'
+				sh 'kubectl apply -f example.yml'
 			
 			}
 		} 
