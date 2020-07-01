@@ -37,7 +37,7 @@ pipeline {
 			
 				script {
                    def appimage = docker.build registry + "/$artifactId-$version" + ":$BUILD_NUMBER" 
-					withDockerRegistry([ credentialsId: "nexus-cred", url: "http://13.233.201.183:8123" ])   
+					withDockerRegistry([ credentialsId: "nexus-cred", url: "http://13.233.184.68/:8123" ])   
 					{
                        appimage.push()
                        appimage.push('latest')
@@ -49,7 +49,7 @@ pipeline {
 		stage ('publish-artifacts'){
 			steps {
 			
-			sh ' curl -v -u ${Nexus_Cred_USR}:${Nexus_Cred_PSW} --upload-file ${WORKSPACE}/example.war http://13.233.201.183:8081/repository/java_project/'
+			sh ' curl -v -u ${Nexus_Cred_USR}:${Nexus_Cred_PSW} --upload-file ${WORKSPACE}/example.war http://13.233.184.68:8081/repository/java_project/'
 			
 			
 			}
