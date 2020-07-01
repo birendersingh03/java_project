@@ -3,7 +3,7 @@ pipeline {
 	environment {
 	
 		Nexus_Cred = credentials('nexus-cred')
-		registry = "13.233.201.183:8123"
+		registry = "13.233.184.68:8123"
 		artifactId = readMavenPom().getArtifactId()
 		version = readMavenPom().getVersion()
 	
